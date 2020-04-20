@@ -1,0 +1,40 @@
+- name: Ensure System is Updated
+  yum: security=yes state=latest update_cache=yes
+
+
+- name: Ensure Required software is installed
+  yum: 
+    name: "{{ installed_software_packages }}" 
+    state: latest
+  notify:
+    - Restart firewalld
+
+- name: Ensure Selinux is in Enforcing Mode
+  selinux:
+    policy: targeted
+    state: enforcing
+
+- name: Ensure firewalld is running
+  service: 
+    name: firewalld
+    state: started
+
+- name: Include tasks to transfer zone files
+  include_tasks: 
+     file: "zones.yml"
+     apply:
+      become: yes
+
+# - name: Find out what the remote machine's rules are
+#   slurp:
+#     src: /etc/firewalld/zones/internal.xml
+#   register: rules
+    
+# - debug: msg="{{ rules['content'] | b64decode }}"
+
+  #-  include: services.yml
+  #-  include: ports.yml
+  #-  include: rich_rules.yml
+  #-  include: allow_admins.yml
+  #-  include: setDROPtarget.yml
+# - debug: msg="{{ installed_software_packages }}"

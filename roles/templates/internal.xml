@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<zone target="DROP">
+  <short>Internal</short>
+  <description>allow services for admin ips only.</description>
+  {% for sourceip in admin_ips %}
+  <source address={{ sourceip }}/>
+  {% endfor %}
+  {% for service in admin_services %}
+  <service name={{ service }}/>
+  {% endfor %}
+  <icmp-block-inversion/>
+  <icmp-block name="echo-request"/>
+</zone>

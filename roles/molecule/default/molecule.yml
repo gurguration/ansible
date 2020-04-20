@@ -1,0 +1,32 @@
+---
+dependency:
+  name: galaxy
+driver:
+  name: docker
+platforms:
+  - name: centos7
+    image: milcom/centos7-systemd
+    privileged: true
+    # command: /sbin/init
+    # security_opts:
+    #   - seccomp.json
+    # tmpfs:
+    #   - /run
+    #   - /tmp
+    # volumes:
+    #   - /sys/fs/cgroup:/sys/fs/cgroup:ro
+    # pre_build_image: true
+provisioner:
+  name: ansible
+  config_options:
+    defaults:
+      fact_caching: memory
+      stdout_callback: yaml
+      callback_whitelist: timer
+      stderr_callback: yaml
+      nocows: false
+    ssh_connection:
+      scp_if_ssh: true
+      pipelining: true
+verifier:
+  name: ansible
