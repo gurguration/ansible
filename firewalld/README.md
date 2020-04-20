@@ -13,7 +13,9 @@ admin_ips ცვლადში ჩაწერილი IP-ები მიე�
 ==================
  
 1. git clone https://github.com/gurguration/ansible.git && cd ansible && ansible-playbook firewall.yml
+
 თუ მოლეკულა გიყენიათ:
+
 1. git clone https://github.com/gurguration/ansible.git && cd ansible/firewalld && sudo molecule test
 
 მოლეკულას დაყანება Ubuntu-სთვის: https://www.digitalocean.com/community/tutorials/how-to-test-ansible-roles-with-molecule-on-ubuntu-16-04
