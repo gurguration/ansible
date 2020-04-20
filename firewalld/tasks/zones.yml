@@ -18,3 +18,4 @@
 - name: Enable logging of dropped packets
   command: firewall-cmd --set-log-denied=all
   when: log_denied|bool
+  changed_when: false

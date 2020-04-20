@@ -1,0 +1,20 @@
+---
+    - name: Firewall Role
+      hosts: all
+      tasks:
+        - name: "Include firewalld role"
+          include_role:
+            name: "firewalld"
+            vars: 
+                admin_ips:
+                  - "8.8.8.8"
+                client_ips: 
+                  - "8.8.4.4"
+                admin_services:
+                  - "samba"
+                allowed_services:
+                  - "openvpn"
+                installed_software_packages:
+                  - "firewalld"
+                  - "selinux-policy"
+                log_denied: true

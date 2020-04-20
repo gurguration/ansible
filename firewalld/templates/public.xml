@@ -6,6 +6,8 @@
   {% for sourceip in client_ips %}
   <source address={{ sourceip }}/>
   {% endfor %} 
-  <service name="openvpn"/>
+  {% for service in allowed_services %}
+  <service name={{ service }}/>
+  {% endfor %} 
   <icmp-block-inversion/>
 </zone>

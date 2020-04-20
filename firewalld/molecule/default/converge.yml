@@ -1,0 +1,21 @@
+---
+- name: Converge
+  hosts: all
+  tasks:
+    - name: "Include firewalld role"
+      include_role:
+        name: "firewalld"
+      vars: 
+        admin_ips:
+          - "8.8.8.8"
+        client_ips: 
+          - "8.8.4.4"
+        admin_services:
+          - "samba"
+        installed_software_packages:
+          - "firewalld"
+          - "tree"
+          - "selinux-policy"
+        allowed_services:
+          - "openvpn"
+        log_denied: true
