@@ -11,10 +11,9 @@
         client_ips: 
           - "8.8.4.4"
         admin_services:
-          - "samba"
+          - "ssh"
         installed_software_packages:
           - "firewalld"
-          - "tree"
           - "selinux-policy"
         allowed_services:
           - "openvpn"
