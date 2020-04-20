@@ -1,7 +1,11 @@
-Role Name
+Firewalld
 =========
 
-A brief description of the role goes here.
+წვდომა ლიენტებისთვის გარედან მათი IP-ების მიხევით. 
+ყველა პაკეტი რომელიც არ ზის client_ips-სა და admins_ip-ში მიდის დროფში. 
+ადმინების და კლიენტების წვდომა კონტროლდება public და internal ზონებში. 
+ადმინებისთვის დამეტაბით სერვისებზე წვდომისთვის admin_service-სში იწერება სერვისის სახელები/სახელები. მაგ. "ftp"
+
 
 Requirements
 ------------
@@ -30,9 +34,4 @@ Including an example of how to use your role (for instance, with variables passe
 License
 -------
 
-BSD
-
-Author Information
-------------------
-
-An optional section for the role authors to include contact information, or a website (HTML is not allowed).
+GNU GPL V3
