@@ -1,2 +1,13 @@
 ---
-# handlers file for vpn_role
+# handlers file for awsCentosVPN
+- name: Restart firewalld
+  become: yes
+  service: 
+    name: firewalld
+    state: restarted
+
+- name: Start firewalld
+  become: yes
+  service: 
+    name: firewalld
+    state: running
