@@ -20,6 +20,9 @@ admin_ips ცვლადში ჩაწერილი IP-ები მიე�
 
 მოლეკულას დაყანება Ubuntu-სთვის: https://www.digitalocean.com/community/tutorials/how-to-test-ansible-roles-with-molecule-on-ubuntu-16-04
 
+
+ჯერჯერობით როლი მხოლოდ Centos7-ზე მუშაობს. 
+-------------------------------------
 License
 -------
 
