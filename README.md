@@ -9,6 +9,11 @@ Firewalld
 admin_ips ცვლადში ჩაწერილი IP-ები მიეკუთვნება internal ზონას. 
 
 
+მოდულის გამოყენება
+==================
+1. 
+2. git clone https://github.com/gurguration/ansible.git && cd ansible
+
 
 
 License
